@@ -1,15 +1,23 @@
 from generate import Artwork
+from lines import Lines
+from blocks import Blocks
+from circles import Circles
 import os
 
-os.makedirs('test', exist_ok=True)
+# TO DO: Create CLI program for user input
 
-print("Images generating")
+def create(image_count=11, style=Artwork):
+    os.makedirs('test', exist_ok=True)
 
-for i in range(1, 11):
-    print(f"Generating image {i}")
-    filepath = os.path.join("test", f"test-{i}.png")
+    print("Images generating")
 
-    art = Artwork(grain=i * 0.1)
-    art.generate(filepath)
+    for i in range(1, image_count):
+        print(f"Generating image {i}")
+        filepath = os.path.join("test", f"test-{i}.png")
 
-print("Generating complete")
+        art = style(grain=i * 0.1)
+        art.generate(filepath)
+
+    print("Generating complete")
+
+create()
