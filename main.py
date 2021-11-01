@@ -1,23 +1,23 @@
-from generate import Artwork
+from create import create
 from lines import Lines
 from blocks import Blocks
 from circles import Circles
-import os
 
-# TO DO: Create CLI program for user input
+options = ["1. Create Pixel Art", "2. Create Square Art", "3. Create Circle Art", "4. Create Line Art"]
 
-def create(image_count=11, style=Artwork):
-    os.makedirs('test', exist_ok=True)
+print("-" * 100 + "\n" + "-" * 39 + "GENERATIVE ART CREATOR" + "-" * 39 + "\n" + "-" * 100)
+print("Please choose from the following option:")
 
-    print("Images generating")
+for option in options:
+    print(option)
 
-    for i in range(1, image_count):
-        print(f"Generating image {i}")
-        filepath = os.path.join("test", f"test-{i}.png")
+user_option = input("")
 
-        art = style(grain=i * 0.1)
-        art.generate(filepath)
-
-    print("Generating complete")
-
-create()
+if int(user_option.strip()) == 1:
+    create()
+elif int(user_option.strip()) == 2:
+    create(style=Blocks)
+elif int(user_option.strip()) == 3:
+    create(style=Circles)
+elif int(user_option.strip()) == 4:
+    create(style=Lines)
