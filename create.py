@@ -4,18 +4,25 @@ from blocks import Blocks
 from circles import Circles
 import os
 
-# TO DO: Create CLI program for user input
+def create(grain, noise_level, image_count=11, style=Artwork):
+    if style == Artwork:
+        type = 'Pixels'
+    elif style == Blocks:
+        type = 'Squares'
+    elif style == Circles:
+        type = 'Circles'
+    elif style == Lines:
+        type = 'Lines'
 
-def create(image_count=11, style=Artwork):
-    os.makedirs('test', exist_ok=True)
+    os.makedirs(str(type), exist_ok=True)
 
     print("Images generating")
 
     for i in range(1, image_count):
         print(f"Generating image {i}")
-        filepath = os.path.join("test", f"test-{i}.png")
+        filepath = os.path.join(str(type), f"{type}-{i}.png")
 
-        art = style(grain=i * 0.1)
+        art = style(noise_level, grain * 0.1)
         art.generate(filepath)
 
     print("Generating complete")

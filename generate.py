@@ -4,7 +4,7 @@ import random
 import colorsys
 
 class Artwork:
-    def __init__(self, size=(500, 500), grain=0.5, noise_level=1.5, noise_shift=2.0):
+    def __init__(self, grain, noise_level, noise_shift=2, size=(500, 500)):
         self.color = self.random_colour()
         self.palette = (
             self.random_colour(),
