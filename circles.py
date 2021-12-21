@@ -16,8 +16,8 @@ class Circles(Artwork):
             ], fill=color)
 
 if __name__ == "__main__":
-    os.makedirs("test", exist_ok=True)
-    filepath = os.path.join("test", "art.png")
+    os.makedirs("circles", exist_ok=True)
+    filepath = os.path.join("circles", "1.png")
     art = Circles()
     art.generate(filepath)
                 

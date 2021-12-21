@@ -17,8 +17,8 @@ class Blocks(Artwork):
             ], fill=color)
 
 if __name__ == "__main__":
-    os.makedirs("test", exist_ok=True)
-    filepath = os.path.join("test", "art.png")
+    os.makedirs("blocks", exist_ok=True)
+    filepath = os.path.join("blocks", "1.png")
     art = Blocks()
     art.generate(filepath)
                 

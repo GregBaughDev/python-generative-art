@@ -26,3 +26,5 @@ def create(grain, noise_level, image_count=11, style=Artwork):
         art.generate(filepath)
 
     print("Generating complete")
+
+create(grain=0, noise_level=0.1, image_count=1, style=Lines)

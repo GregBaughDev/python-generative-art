@@ -1,10 +1,11 @@
 from PIL import Image
 from noise import pnoise2
+import os
 import random
 import colorsys
 
 class Artwork:
-    def __init__(self, grain, noise_level, noise_shift=2, size=(500, 500)):
+    def __init__(self, grain=0, noise_level=0, noise_shift=2, size=(500, 500)):
         self.color = self.random_colour()
         self.palette = (
             self.random_colour(),
@@ -90,3 +91,9 @@ class Artwork:
 
     def generate(self, filepath):
         self.img.save(filepath)
+
+if __name__ == "__main__":
+    os.makedirs("pixels", exist_ok=True)
+    filepath = os.path.join("pixels", "1.png")
+    art = Artwork()
+    art.generate(filepath)

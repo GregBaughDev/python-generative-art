@@ -21,8 +21,8 @@ class Lines(Artwork):
             ], fill=color)
 
 if __name__ == "__main__":
-    os.makedirs("test", exist_ok=True)
-    filepath = os.path.join("test", "art.png")
+    os.makedirs("lines", exist_ok=True)
+    filepath = os.path.join("lines", "1.png")
     art = Lines()
     art.generate(filepath)
                 
